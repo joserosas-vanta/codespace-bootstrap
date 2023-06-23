@@ -64,6 +64,9 @@ export EDITOR="/usr/bin/nvim"
 my_public_ip=$(curl -s ifconfig.me)
 export MY_PUBLIC_IP="$my_public_ip"
 
+# linuxbrew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
 # Starship Prompt
 eval "$(starship init zsh)"
 
