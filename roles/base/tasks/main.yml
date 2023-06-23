@@ -4,7 +4,7 @@
 
 - name: Use zsh as default shell
   blockinfile:
-    path: "~/.bashrc"
+    path: "{{ user_dir }}/.bashrc"
     block: |
       if command -v zsh >/dev/null; then
         exec zsh -l
