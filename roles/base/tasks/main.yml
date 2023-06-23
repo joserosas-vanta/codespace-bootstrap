@@ -37,5 +37,4 @@
       - jq
       - starship
     state: present
-    environment:
-      PATH: "{{ ansible_env.PATH }}:/home/.linuxbrew/bin"
+    path: "/usr/local/bin:/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin"
