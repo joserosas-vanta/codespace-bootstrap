@@ -7,3 +7,10 @@
       tags: always
       ansible.builtin.apt: update_cache=yes
       changed_when: False
+# run roles
+
+- hosts: all
+  tags: base
+  become: true
+  roles:
+    - base
