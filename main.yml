@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tags: always
+  become: true
+  pre_tasks:
+    - name: pre-run → update package cache (debian)
+      tags: always
+      ansible.builtin.apt: update_cache=yes
+      changed_when: False
