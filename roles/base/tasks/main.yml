@@ -3,12 +3,13 @@
   tags: always
 
 - name: Use zsh as default shell
-  lineinfile:
+  blockinfile:
     path: "~/.bashrc"
-    line: |
+    block: |
       if command -v zsh >/dev/null; then
         exec zsh -l
       fi
+    marker: "# {mark} ANSIBLE MANAGED BLOCK - ZSH DEFAULT SHELL"
     create: yes
 
 - name: user → copy zsh config
