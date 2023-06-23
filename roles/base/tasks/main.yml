@@ -2,10 +2,19 @@
 - include_vars: local.yml
   tags: always
 
+- name: Use zsh as default shell
+  lineinfile:
+    path: "~/.bashrc"
+    line: |
+      if command -v zsh >/dev/null; then
+        exec zsh -l
+      fi
+    create: yes
+
 - name: user → copy zsh config
   tags: dotfiles, zsh
   ansible.builtin.copy:
-    src: /.zshrc
+    src: .zshrc
     dest: "{{ user_dir }}/.zshrc"
     owner: vscode
     mode: 0600
